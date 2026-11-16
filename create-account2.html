@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Zamaria Cobbert">
+<meta name="description" content="Try the signup demo for Artsan Artz, a student art website inspired by creativity, digital art, and sharing artistic ideas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles3.css">
+    <title>Create an Account | Artsan Artz</title>
+</head>
+
+<body>
+    <header>
+        <h1>Artsan Artz</h1>
+        <p>A place for your own creativity!</p>
+        </header>
+
+    <main>
+        <section class="account-panel" aria-labelledby="account-heading">
+            <h2 id="account-heading">Create Your Account</h2>
+            <p>Fill out the form to try our signup demo.</p>
+            <p>This demo does not save your information just yet! Use a pretend password.</p>
+
+            <form id="signup-form">
+                <label for="username">Username</label>
+                <input
+                type="text"
+                id="username"
+                name="username"
+                autocomplete="username"
+                required
+                >
+
+<label for="email">Email Address</label>
+<input
+type="email"
+id="email"
+name="email"
+autocomplete="email"
+required
+>
+
+<label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    aria-describedby="password-help"
+                    required
+                >
+                <small id="password-help">Use at least 8 characters.</small>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit">Try Signup Demo</button>
+
+                <p id="signup-message" role="status"></p>
+            </form>
+
+            <p><a href="index.html">Back to the homepage</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">
+            <em>Created by Zamaria Cobbert</em>
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("signup-form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const message = document.getElementById("signup-message");
+
+        function checkPasswords() {
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity("Your passwords must match.");
+            } else {
+                confirmPassword.setCustomValidity("");
+            }
+
+            message.textContent = "";
+        }
+
+        password.addEventListener("input", checkPasswords);
+        confirmPassword.addEventListener("input", checkPasswords);
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            message.textContent =
+                "Demo complete! Your form is valid, but no account was created.";
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+    background-color: darkgreen;
+}
+ 
+h1 {
+    color: azure;
+    margin-left: 25px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+    background-color: #222;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+    background-color: darkcyan;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+}
+
+.art-gallery {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.art-gallery {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+
+.art-gallery:focus-visible {
+  outline: 3px solid azure;
+  outline-offset: 4px;
+}
+
+.account-panel {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 24px;
+  background-color: #fff;
+  color: #222;
+  border-radius: 12px;
+}
+
+.account-panel h2 {
+    margin-top: 0;
+}
+
+.account-panel a {
+    color: #005a45;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#signup-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#signup-form input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    font: inherit;
+}
+
+#signup-form button {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+}
+
+#signup-form button:hover {
+    background-color: #004000;
+}
+
+#signup-form input:focus-visible,
+#signup-form button:focus-visible {
+    outline: 3px solid #005a9c;
+    outline-offset: 3px;
+}
+
+#signup-message {
+    margin: 0;
+}
+
+.footer-text {
+    margin-top: 30px;
+    overflow-wrap: anywhere;
+}
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        background-color: #222;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Phone screens */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+        background-color: darkcyan;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+}
